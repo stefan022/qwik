@@ -1,5 +1,5 @@
 import { component$, useStore } from "@builder.io/qwik";
-import { Button, Title, User } from "~/components";
+import { Button, Counter, Title, User } from "~/components";
 import type { IUser } from "~/typescript/interfaces/IUser";
 
 export default component$(() => {
@@ -15,6 +15,7 @@ export default component$(() => {
 			<Title title="Welcome to the Home page! :D" />
 			<Button />
 			<User user={user} />
+			<Counter />
 		</>
 	);
 });
