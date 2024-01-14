@@ -1,7 +1,10 @@
-import { component$, useSignal } from "@builder.io/qwik";
+import { $, component$, useSignal } from "@builder.io/qwik";
 
 export default component$(() => {
 	const text = useSignal<string>("Click me");
 
-	return <button>{text}</button>;
+	const printMessage = $(() => console.log("CLICKED!"));
+	const printSmile = $(() => console.log("xd"));
+
+	return <button onClick$={[printMessage, printSmile]}>{text}</button>;
 });
