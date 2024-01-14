@@ -1,5 +1,4 @@
 import { component$ } from "@builder.io/qwik";
+import { Navbar } from "~/components";
 
-export default component$(() => {
-	return <header>Navbar</header>;
-});
+export default component$(() => <Navbar />);
