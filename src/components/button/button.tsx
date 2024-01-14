@@ -1,7 +1,7 @@
 import { $, component$, useSignal } from "@builder.io/qwik";
 
 export default component$(() => {
-	const text = useSignal<string>("Click me");
+	const isClicked = useSignal<boolean>(false);
 
 	// Because event handling is asynchronous, you can't use event.currentTarget.
 	// To solve this Qwik handlers provide a currentTarget as a second argument.
@@ -11,9 +11,14 @@ export default component$(() => {
 
 	const printSmile = $(() => console.log("xd"));
 
+	const handleClick = $(() => (isClicked.value = !isClicked.value));
+
 	return (
-		<button preventdefault:click onClick$={[printMessage, printSmile]}>
-			{text}
+		<button
+			preventdefault:click
+			onClick$={[handleClick, printMessage, printSmile]}
+		>
+			{isClicked.value ? "Cancel" : "Click me"}
 		</button>
 	);
 });
