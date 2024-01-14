@@ -1,4 +1,4 @@
-import { component$, useStyles$ } from "@builder.io/qwik";
+import { component$, useComputed$, useStyles$ } from "@builder.io/qwik";
 import type { IUser } from "~/typescript/interfaces/IUser";
 
 import style from "./styles.css?inline";
@@ -11,6 +11,8 @@ export default component$<IProps>(
 	({ user: { id, username, profession, framework } }) => {
 		useStyles$(style);
 
+		const fw = useComputed$(() => framework.toLowerCase());
+
 		return (
 			<div>
 				<div class="user">
@@ -18,7 +20,7 @@ export default component$<IProps>(
 					<p>ID: {id}</p>
 					<p>Username: @{username}</p>
 					<p>Profession: {profession}</p>
-					<p>Framework: {framework}</p>
+					<p>Framework: {fw}</p>
 				</div>
 			</div>
 		);
