@@ -1,8 +1,12 @@
-import { component$, useResource$, useStore } from "@builder.io/qwik";
+import { component$, useContextProvider, useStore } from "@builder.io/qwik";
 import { Button, Counter, Title, User } from "~/components";
+import { ctx } from "~/context/ctx";
 import type { IUser } from "~/typescript/interfaces/IUser";
+import type { Theme } from "~/typescript/types/Theme";
 
 export default component$(() => {
+	const theme = useStore<{ theme: Theme }>({ theme: "dark" });
+
 	const user = useStore<IUser>({
 		id: 1,
 		username: "stefan022",
@@ -10,17 +14,7 @@ export default component$(() => {
 		framework: "Qwik",
 	});
 
-	useResource$(() => {
-		/*
-			Use useResource$() to create a computed value that is derived asynchronously. It's 
-			the asynchronous version of useComputed$(), which includes the state of the 
-			resource (loading, resolved, rejected) on top of the value.
-
-			A common use case for useResource$() is to fetch data from an external API within 
-			the component itself, this means that the execution might happen in the server or 
-			the client.
-		*/
-	});
+	useContextProvider(ctx, theme);
 
 	return (
 		<>
