@@ -6,5 +6,9 @@ export default component$(() => {
 	const printMessage = $(() => console.log("CLICKED!"));
 	const printSmile = $(() => console.log("xd"));
 
-	return <button onClick$={[printMessage, printSmile]}>{text}</button>;
+	return (
+		<button preventdefault:click onClick$={[printMessage, printSmile]}>
+			{text}
+		</button>
+	);
 });
