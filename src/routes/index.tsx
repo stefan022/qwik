@@ -1,5 +1,5 @@
 import { component$, useContextProvider, useStore } from "@builder.io/qwik";
-import { Button, Counter, Title, User } from "~/components";
+import { Button, Counter, SayHi, Title, User } from "~/components";
 import { ctx } from "~/context/ctx";
 import { useMousePosition } from "~/hooks/useMousePosotion";
 import type { IUser } from "~/typescript/interfaces/IUser";
@@ -20,6 +20,7 @@ export default component$(() => {
 
 	return (
 		<>
+			<SayHi />
 			<Title title="Welcome to the Home page! :D" />
 			<Button />
 			<User user={user} />
