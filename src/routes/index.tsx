@@ -36,7 +36,12 @@ export default component$(() => {
 					</p>
 				</div>
 			</div>
-			<Link href="/docs">See Docs</Link>
+			<nav>
+				<Link href="/docs">See Docs</Link>
+				<Link prefetch href="/about">
+					About
+				</Link>
+			</nav>
 		</>
 	);
 });

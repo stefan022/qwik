@@ -219,3 +219,9 @@ button.button-small {
   padding: 1rem 3rem;
   width: fit-content;
 }
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
