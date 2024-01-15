@@ -1,7 +1,9 @@
 import { component$ } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
+import { Link, useNavigate } from "@builder.io/qwik-city";
 
 export default component$(() => {
+	const navigate = useNavigate();
+
 	return (
 		<div>
 			<div>
@@ -14,7 +16,9 @@ export default component$(() => {
 			</div>
 			<div>
 				<p>Docs 3</p>
-				<Link href="/docs/3">View details</Link>
+				<button onClick$={() => navigate("/docs/3")}>
+					View details
+				</button>
 			</div>
 		</div>
 	);
