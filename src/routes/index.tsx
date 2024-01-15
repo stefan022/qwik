@@ -1,4 +1,5 @@
 import { component$, useContextProvider, useStore } from "@builder.io/qwik";
+import { Link } from "@builder.io/qwik-city";
 import { Button, Counter, Digits, SayHi, Title, User } from "~/components";
 import { ctx } from "~/context/ctx";
 import { useMousePosition } from "~/hooks/useMousePosotion";
@@ -35,6 +36,7 @@ export default component$(() => {
 					</p>
 				</div>
 			</div>
+			<Link href="/docs">See Docs</Link>
 		</>
 	);
 });
