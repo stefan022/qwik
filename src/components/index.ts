@@ -7,4 +7,5 @@ export { default as Title } from "./title/title";
 export { default as Button } from "./button/button";
 export { default as User } from "./user/user";
 export { default as Counter } from "./counter/counter";
+export { default as Refresh } from "./refresh/refresh";
 export { default as Footer } from "./footer/footer";
