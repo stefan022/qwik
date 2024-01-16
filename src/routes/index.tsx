@@ -41,6 +41,7 @@ export default component$(() => {
 				<Link prefetch href="/about">
 					About
 				</Link>
+				<Link href="/form">Form</Link>
 			</nav>
 		</>
 	);
