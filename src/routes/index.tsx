@@ -42,6 +42,7 @@ export default component$(() => {
 					About
 				</Link>
 				<Link href="/form">Form</Link>
+				<Link href="/greet">Greet</Link>
 			</nav>
 		</>
 	);
