@@ -6,7 +6,8 @@ import Container from "~/container/container";
 
 import styles from "./styles.css?inline";
 
-export const onRequest: RequestHandler = async ({ next, url }) => {
+export const onRequest: RequestHandler = async ({ sharedMap, next, url }) => {
+	sharedMap.set("db", "mysql");
 	console.log("Before request", url);
 	await next();
 	console.log("After request", url);
