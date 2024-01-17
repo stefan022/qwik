@@ -6,7 +6,13 @@ import Container from "~/container/container";
 
 import styles from "./styles.css?inline";
 
-export const onRequest: RequestHandler = async ({ sharedMap, next, url }) => {
+export const onRequest: RequestHandler = async ({
+	locale,
+	sharedMap,
+	next,
+	url,
+}) => {
+	locale("en-US");
 	sharedMap.set("db", "mysql");
 	console.log("Before request", url);
 	await next();

@@ -4,6 +4,7 @@ export const onGet: RequestHandler = async ({
 	headers,
 	cacheControl,
 	platform,
+	locale,
 	query,
 	params,
 	json,
@@ -23,5 +24,5 @@ export const onGet: RequestHandler = async ({
 
 	const plt = Object.keys(platform);
 
-	json(200, { ...params, ...obj, platform: plt });
+	json(200, { ...params, ...obj, platform: plt, locale: locale() });
 };
