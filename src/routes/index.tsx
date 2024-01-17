@@ -43,6 +43,7 @@ export default component$(() => {
 				</Link>
 				<Link href="/form">Form</Link>
 				<Link href="/greet">Greet</Link>
+				<Link href="/status">Status</Link>
 			</nav>
 		</>
 	);
