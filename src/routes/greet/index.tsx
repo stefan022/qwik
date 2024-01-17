@@ -12,6 +12,7 @@ export const onGet: RequestHandler = async ({
 	const qwik_cookie = cookie.get("Qwik.cookie");
 
 	json(200, {
+		params: "add a param to the URL and see the magic",
 		url: url.toString(),
 		base_pathname,
 		method,
