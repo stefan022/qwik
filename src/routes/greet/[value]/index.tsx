@@ -3,6 +3,7 @@ import { type RequestHandler } from "@builder.io/qwik-city";
 export const onGet: RequestHandler = async ({
 	headers,
 	cacheControl,
+	platform,
 	query,
 	params,
 	json,
@@ -20,5 +21,7 @@ export const onGet: RequestHandler = async ({
 	query.forEach((v, k) => (obj[k] = v));
 	headers.forEach((v, k) => (obj[k] = v));
 
-	json(200, { ...params, ...obj });
+	const plt = Object.keys(platform);
+
+	json(200, { ...params, ...obj, platform: plt });
 };
