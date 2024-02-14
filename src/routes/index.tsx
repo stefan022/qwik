@@ -45,6 +45,7 @@ export default component$(() => {
 				<Link href="/greet">Greet</Link>
 				<Link href="/status">Status</Link>
 			</nav>
+			<div>API URL: {process.env.PUBLIC_API_URL}</div>
 		</>
 	);
 });
